@@ -140,7 +140,8 @@ else:
             st.session_state.page = "login"
             st.rerun()
 
-df = pd.read_excel("online_retail_mini.xlsx")
+url = "https://raw.githubusercontent.com/eanthponemaungg/repo/main/online_retail_mini.xlsx"
+df = pd.read_excel("url")
 df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"])
 df["TotalSales"] = df["Quantity"]*df["Price"]
 
@@ -262,3 +263,4 @@ if st.session_state.role == "AdminRIG":
     if st.button("⬅️ Go Back to Data Management Panel"):
         st.session_state.page = "manage"
         st.rerun()
+
